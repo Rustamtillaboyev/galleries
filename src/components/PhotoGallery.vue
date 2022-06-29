@@ -1,106 +1,188 @@
 <template>
-<div>
-  <div class="fit row wrap justify-start items-start">
-    <div v-for="i in 5" :key="i" class="w-235px h-500px q-mx-md border br-4px" style="margin-bottom:100px; margin-top:100px;">
+  <div class=" ">
+    <!-- Autoplay slider -->
+    <div class="d-f mySwiper1">
+      <swiper
+          :spaceBetween="30"
+          :centeredSlides="true"
+          :autoplay="{
+            delay: 2500,
+            disableOnInteraction: false,
+          }"
+          :modules="modules"
+          class="mySwiper"
+          v-for="card in 2" :key="card"
+        >
+        <swiper-slide v-for="card in 2" :key="card" class="body">
+          <div class="d-f jc-sp_btw w-230px Bonus ">
+            <div class="bg-red br-4px text-white text-weight-bold q-ml-sm fs-15px">-10%</div>
+            <div class="bg-red br-4px text-white text-weight-bold q-mr-sm fs-15px">New</div>
+          </div>
 
-        <div class="d-f jc-sp_btw q-mt-md">
-          <div class="bg-red br-4px text-white text-weight-bold q-ml-md">-10%</div>
-          <div class="bg-red br-4px text-white text-weight-bold w-50px  text-center q-mr-md">Yangi</div>
-        </div>
-        <!-- Images -->
-        <q-img class="img" src="http://demo.posthemes.com/pos_ecolife_fastfood/427-home_default/pizza-primavera.jpg"><div class="button1О"><q-btn class="btn bg-red" icon="search"/></div>
-       </q-img>
-        <!-- Images over -->
-      <div class="q-pa-md">
+        <q-img class="img" width="245px" height="230px" src="	http://demo.posthemes.com/pos_ecolife_fastfood/382-home_default/benefit-food.jpg">
+          <div class="button1 ">
+              <q-btn class="btn " icon="search" />
+          </div>
+        </q-img>
+
+    <div class="iconstar">
+      <div class="">
         <div class="q-gutter-y-md column">
           <q-rating
             v-model="ratingModel"
-            size="24px"
-            color="yellow-6"
+            size="20px"
+            color="yellow-5"
             icon="star_border"
             icon-selected="star"
-          />
-
+            />
         </div>
-      </div>
-        <div class="text-h6 q-ml-md">Pizza Mozzarella</div>
-        <div class="q-ml-md">Yangi Mozzarela ni xoxlovchilarni <br> tatib ko'ringlar</div> <br>
-        <div class="text-italic q-ml-md d-f"><del class="fs-19px text-weight-light">$11.90</del><span class="text-red q-ml-md text-weight-bolder fs-20px">$10.12</span>
-        <div class="borderradius bg-yellow-6 q-ml-lg"> <q-icon class="d-f jc-center " size="15px" name="fas fa-shopping-bag"/></div>
-        </div>
-      <div class="d-f hover1 q-mt-mb">
-          <div> <q-icon name="search" class="q-ml-md"/><div class="text-p q-ml-md">Taqqoslang</div></div>
-          <div> <q-icon name="search" class="q-ml-md"/><div class="text-p q-ml-md">Taqqoslang</div></div>
+       </div>
+    </div>
+        </swiper-slide>
+          <div class="Text text-h6 q-ml-md d-f row">Pizza Mozzarella</div>
+            <div class="Break q-ml-md fs-12px d-f row">Break old records and make new goals in the New Balance® Arishi Sport v1.</div>
+            <q-btn class=" icon" icon="shopping_bag"></q-btn>
+            <div class="Breakk text-p text-weight-bold fs-17px"> $29.00  </div>
+      </swiper>
       </div>
     </div>
-  </div>
-</div>
 </template>
 
 <script>
+
 import { ref } from 'vue'
 
+import { Swiper, SwiperSlide } from "swiper/vue";
+
+// Import Swiper styles
+import "swiper/css";
+
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+
+// import required modules
+import { Autoplay, Pagination, Navigation } from "swiper";
+
 export default {
-  setup () {
+  components: {
+    Swiper,
+    SwiperSlide,
+  },
+  setup() {
     return {
-      ratingModel: ref(3),
-      ratingModell: ref(1)
-    }
-  }
-}
+      modules: [Autoplay, Pagination, Navigation],
+      ratingModel: ref(3)
+    };
+  },
+};
 </script>
 
 
 <style scoped>
-.border{
-  border: 1px solid rgb(214, 210, 210);
+.body {
+  /* position: relative; */
+  height: 100%;
 }
-.border:hover{
-  border: 1px solid rgb(223, 44, 44);
-
+@media screen and (max-width: 599px){
+  .body{
+    width: 100%;
+    background-color: red;
+  }
+  .swiper{
+    width: 40%;
+  }
 }
-.position{
-  position: absolute;
-  top: 3460px;
-  margin: 80px;
-
+.swiper {
+  height: 375px;
+  margin-top: 50px;
 }
-.but .position{
-  opacity: 0;
-}
-.but .position:hover{
-  opacity: 1;
-}
-.borderradius{
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 40px;
-  height: 40px;
+}
+.mySwiper{
+  border: 1px solid rgb(184, 180, 180);
+  margin: 18px;
+  padding: 0;
+  border-radius: 4px;
+}
+.mySwiper:hover{
+  border: 1px solid rgb(247, 18, 18);
+}
+.Bonus{
+  position:absolute;
+  bottom: 330px;
+  z-index: 2;
+  margin: 0;
+  padding: 0;
+}
+.icon{
+  position:absolute;
+  margin-top: 30px;
+  background-color: rgb(255, 255, 0);
+  left: 170px;
   border-radius: 50%;
+  padding: 0;
+  height: 30px;
+  width: 40px;
+  transition: 0.3s;
 }
-.hover1{
-  opacity: 0;
+.icon:hover{
+  background-color: red;
+  color: #fff;
+  transition: 0.3s;
+}
+.iconstar{
+  position:absolute;
+  bottom: 120px;
+  z-index: 2;
+  margin: 10px;
+}
+.Text{
+  position:absolute;
+  bottom:  80px;
+  z-index: 2;
+  margin: 1;
+}
+.Break{
+  position:absolute;
+  bottom:  20px;
+  z-index: 1;
+  margin: 10px;
+}
+.Breakk{
+  position:absolute;
+  top:  340px;
+  z-index: 1;
+  margin: 10px;
+}
+.icon{
+  position:absolute;
+  top:  330px;
+  z-index: 1;
+  margin: 10px;
+}
+.border {
+  border: 1px solid rgb(214, 210, 210);
   transition: 0.1s;
-
 }
-.hover1:hover{
-  opacity: 1;
+@media screen and (max-width: 500px){
+  .border{
+    height: 600px;
+    width: 90%;
+  }
+  .btn{
+    margin-left: 50px;
+    margin-top: 40px;
+  }
+}
+.border:hover {
+  border: 1px solid rgb(223, 44, 44);
   transition: 0.1s;
-  color: red;
-  cursor: pointer;
 }
-
-
-
-
-
-
-
-
-
-
-.button1{
+.button1 {
   width: 100%;
   height: 500px;
   position: absolute;
@@ -108,25 +190,29 @@ export default {
   background: transparent;
   transition: 0.2s;
 }
-.button1:hover{
+.button1:hover {
   opacity: 1;
   transition: 0.2s;
-
 }
-.btn{
-  width: 50px;
-  height: 50px;
+.btn {
+  width: 10px;
+  height: 30px;
   border-radius: 50%;
   position: absolute;
-  top: 100px;
+  top: 90px;
   bottom: 130px;
   left: 100px;
+  transition: 0.4s;
+  background-color: aliceblue;
+  color: black;
+}
+.btn:hover{
+  transition: 0.4s;
+  background-color: red;
+  color: #fff;
 }
 .img{
   position: relative;
   z-index: 1;
 }
-
-
-
 </style>
