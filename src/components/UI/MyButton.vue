@@ -10,5 +10,19 @@
 
 
 <style scoped>
+/* .borderradius {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: yellow;
+  transition: 1s;
 
+}
+.borderradius:hover{
+  background-color: red;
+  transition: 1s;
+} */
 </style>

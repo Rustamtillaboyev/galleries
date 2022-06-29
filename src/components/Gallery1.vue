@@ -1,42 +1,6 @@
 <template lang="">
   <div>
-    <div class="body row">
-      <div class="container col-2">
-        <q-img height="300px" src="https://maps.spravka-region.ru/img/84/8479917312971275.jpg" class="image2 "/>
-       <div class="overlay">
-        <q-img width="300px" height="300px" class="img" src="../assets/2_5303527729948264663.jpg"/>
-        <div class="text">Oldingi holati</div>
-       </div>
-      </div>
-      <div class="container1 col-2 q-mt-xl q-ml-xl">
-        <q-img height="300px" src="https://maps.spravka-region.ru/img/84/8479917312971275.jpg" class="image2 "/>
-       <div class="overlay1">
-        <q-img width="300px" class="img" src="../assets/1_5017558950430638447.jpg"/>
-        <div class="text1">Oldingi holati</div>
-       </div>
-      </div>
-      <div class="container2 col-2 q-ml-xl">
-        <q-img height="350px" src="https://maps.spravka-region.ru/img/84/8479917312971275.jpg" class="image2 "/>
-       <div class="overlay2">
-        <q-img width="300px" class="img" src="../assets/2_5303527729948264665.jpg"/>
-        <div class="text2">Oldingi holati</div>
-       </div>
-      </div>
-      <div class="container2 col-2 q-ml-xl q-mt-xl">
-        <q-img height="300px" src="https://maps.spravka-region.ru/img/84/8479917312971275.jpg" class="image2 "/>
-      <div class="overlay2">
-        <q-img width="300px" class="img" src="../assets/2_5303527729948264665.jpg"/>
-        <div class="text2">Oldingi holati</div>
-      </div>
-      </div>
-      <div class="container2 col-2 q-ml-xl">
-        <q-img height="300px" src="https://maps.spravka-region.ru/img/84/8479917312971275.jpg" class="image2 shadow-21"/>
-      <div class="overlay2">
-        <q-img width="300px" height="300px" class="img" src="../assets/2_5303527729948264665.jpg"/>
-        <div class="text2">Oldingi holati</div>
-      </div>
-      </div>
-    </div>
+
 
   </div>
 </template>
